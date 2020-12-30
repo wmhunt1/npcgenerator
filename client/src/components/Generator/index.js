@@ -1,7 +1,7 @@
 import React, { useState, } from "react";
 import "./index.css";
 
-const ageArray = ["Adolescent", "Adult", "Middle-Aged", "Old"]
+const ageArray = ["Adolescent", "Adult", "Middle-Aged", "Elderly"]
 const genderArray = ["Male", "Female"]
 const raceArray = [
     // {
@@ -78,15 +78,17 @@ const raceArray = [
             ["Black", "Blue", "Green", "Gray", "Orange", "Pink", "Purple", "Red", "White", "Yellow"]
     }
 ];
+const jobArray = ["Merchant"];
 function Generator() {
     const [age, setAge] = useState(ageArray[Math.floor((Math.random() * ageArray.length))]);
     const [gender, setGender] = useState(genderArray[Math.floor((Math.random() * genderArray.length))]);
     const [race, setRace] = useState(raceArray[0]);
+    const [job, setJob] = useState(jobArray[0])
     //const [race, setRace] = useState(raceArray[Math.floor((Math.random() * raceArray.length))]);
     //need to get the starting sub race to work
     //const [subRace, setSubRace] = useState("");
     const [subRace, setSubRace] = useState(raceArray[0].subRace[Math.floor((Math.random() * raceArray[0].subRace.length))]);
-    const [npc, setNPC] = useState(age + " " + gender + " " + subRace + " " + race.raceName);
+    const [npc, setNPC] = useState(age + " " + gender + " " + subRace + " " + race.raceName + " " + job);
     const randomNPC = () => {
         const randomAge = Math.floor((Math.random() * ageArray.length));
         setAge(ageArray[randomAge]);
@@ -96,7 +98,9 @@ function Generator() {
         setRace(raceArray[randomRace]);
         const randomSubRace = raceArray[randomRace].subRace[Math.floor((Math.random() * raceArray[randomRace].subRace.length))]
         setSubRace(randomSubRace);
-        setNPC(age + " " + gender + " " + subRace + " " + race.raceName);
+        const randomJob = Math.floor((Math.random() * jobArray.length))
+        setJob(jobArray[randomJob])
+        setNPC(age + " " + gender + " " + subRace + " " + race.raceName + " " + job);
     };
     return (
         <div>
