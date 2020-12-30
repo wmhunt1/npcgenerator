@@ -9,10 +9,10 @@ const raceArray = [
     //     subRace:
     //     []
     // }
-     {
+    {
         raceName: "Aasimar",
         subRace:
-        []
+            []
     },
     {
         raceName: "Dragonborn",
@@ -38,12 +38,12 @@ const raceArray = [
     {
         raceName: "Genasi",
         subRace:
-        ["Air", "Earth", "Fire", "Water"]
+            ["Air", "Earth", "Fire", "Water"]
     },
     {
         raceName: "Goliath",
         subRace:
-        ["Cloud", "Fire", "Frost",  "Hill", "Stone", "Storm" ]
+            ["Cloud", "Fire", "Frost", "Hill", "Stone", "Storm"]
     },
     {
         raceName: "Gnome",
@@ -93,7 +93,7 @@ function Generator() {
         setRace(raceArray[randomRace]);
         const randomSubRace = raceArray[randomRace].subRace[Math.floor((Math.random() * raceArray[randomRace].subRace.length))]
         setSubRace(randomSubRace);
-        setNPC(age + " " +  gender + " " + subRace + " " +  race.raceName);
+        setNPC(age + " " + gender + " " + subRace + " " + race.raceName);
     };
     return (
         <div>
