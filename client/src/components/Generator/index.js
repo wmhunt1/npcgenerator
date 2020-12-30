@@ -9,11 +9,11 @@ const raceArray = [
     //     subRace:
     //     []
     // }
-    {
-        raceName: "Aasimar",
-        subRace:
-            []
-    },
+    // {
+    //     raceName: "Aasimar",
+    //     subRace:
+    //         []
+    // },
     {
         raceName: "Dragonborn",
         subRace:
@@ -25,26 +25,26 @@ const raceArray = [
         subRace:
             ["Hill", "Dwarf", "Duergar (Gray)"]
     },
-    {
-        raceName: "Eladrin",
-        subRace:
-            ["Autumn", "Spring", "Summer", "Winter"]
-    },
+    // {
+    //     raceName: "Eladrin",
+    //     subRace:
+    //         ["Autumn", "Spring", "Summer", "Winter"]
+    // },
     {
         raceName: "Elf",
         subRace:
             ["Dark", "High", "Sea", "Wood"]
     },
-    {
-        raceName: "Genasi",
-        subRace:
-            ["Air", "Earth", "Fire", "Water"]
-    },
-    {
-        raceName: "Goliath",
-        subRace:
-            ["Cloud", "Fire", "Frost", "Hill", "Stone", "Storm"]
-    },
+    // {
+    //     raceName: "Genasi",
+    //     subRace:
+    //         ["Air", "Earth", "Fire", "Water"]
+    // },
+    // {
+    //     raceName: "Goliath",
+    //     subRace:
+    //         ["Cloud", "Fire", "Frost", "Hill", "Stone", "Storm"]
+    // },
     {
         raceName: "Gnome",
         subRace:
@@ -79,11 +79,14 @@ const raceArray = [
     }
 ];
 function Generator() {
-    const [age, setAge] = useState("");
-    const [gender, setGender] = useState("");
-    const [race, setRace] = useState("");
-    const [subRace, setSubRace] = useState("")
-    const [npc, setNPC] = useState("")
+    const [age, setAge] = useState(ageArray[Math.floor((Math.random() * ageArray.length))]);
+    const [gender, setGender] = useState(genderArray[Math.floor((Math.random() * genderArray.length))]);
+    const [race, setRace] = useState(raceArray[0]);
+    //const [race, setRace] = useState(raceArray[Math.floor((Math.random() * raceArray.length))]);
+    //need to get the starting sub race to work
+    //const [subRace, setSubRace] = useState("");
+    const [subRace, setSubRace] = useState(raceArray[0].subRace[Math.floor((Math.random() * raceArray[0].subRace.length))]);
+    const [npc, setNPC] = useState(age + " " + gender + " " + subRace + " " + race.raceName);
     const randomNPC = () => {
         const randomAge = Math.floor((Math.random() * ageArray.length));
         setAge(ageArray[randomAge]);
