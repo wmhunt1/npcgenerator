@@ -1,3 +1,4 @@
+//https://www.16personalities.com/personality-types
 export const personalityArray = [
     {
         name: "Adventurer",
