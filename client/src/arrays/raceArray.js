@@ -1,3 +1,4 @@
+//need racial names
 export const raceArray = [
     // {
     //     raceName: "N",
