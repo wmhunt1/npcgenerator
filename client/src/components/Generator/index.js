@@ -1,84 +1,10 @@
 import React, { useState, } from "react";
 import "./index.css";
+import ageArray from "../../arrays/ageArray.js";
+import genderArray from "../../arrays/genderArray.js";
+import raceArray from "../../arrays/raceArray.js";
+import jobArray from "../../arrays/jobArray.js";
 
-const ageArray = ["Adolescent", "Adult", "Middle-Aged", "Elderly"]
-const genderArray = ["Male", "Female"]
-const raceArray = [
-    // {
-    //     raceName: "N",
-    //     subRace:
-    //     []
-    // }
-    // {
-    //     raceName: "Aasimar",
-    //     subRace:
-    //         []
-    // },
-    {
-        raceName: "Dragonborn",
-        subRace:
-            ["Black", "Blue", "Brass", "Bronze", "Copper", "Gold",
-                "Green", "Red", "Silver", "White"]
-    },
-    {
-        raceName: "Dwarf",
-        subRace:
-            ["Hill", "Dwarf", "Duergar (Gray)"]
-    },
-    // {
-    //     raceName: "Eladrin",
-    //     subRace:
-    //         ["Autumn", "Spring", "Summer", "Winter"]
-    // },
-    {
-        raceName: "Elf",
-        subRace:
-            ["Dark", "High", "Sea", "Wood"]
-    },
-    // {
-    //     raceName: "Genasi",
-    //     subRace:
-    //         ["Air", "Earth", "Fire", "Water"]
-    // },
-    // {
-    //     raceName: "Goliath",
-    //     subRace:
-    //         ["Cloud", "Fire", "Frost", "Hill", "Stone", "Storm"]
-    // },
-    {
-        raceName: "Gnome",
-        subRace:
-            ["Forest", "Rock", "Svirfneblin (Deep)"]
-    },
-    {
-        raceName: "Half-Elf",
-        subRace: [""]
-        // subRace:
-        //     ["Dark Elf Heritage", "High Elf Heritage", "Sea Elf Heritage", "Wood Elf Heritage"]
-    },
-    {
-        raceName: "Half-Orc",
-        subRace:
-            [""]
-    },
-    {
-        raceName: "Hafling",
-        subRace:
-            ["Lightfoot", "Ghostwise", "Stout"]
-    },
-    {
-        raceName: "Human",
-        subRace:
-            [""]
-    },
-    {
-        raceName: "Tiefling",
-        //maybe put color here
-        subRace:
-            ["Black", "Blue", "Green", "Gray", "Orange", "Pink", "Purple", "Red", "White", "Yellow"]
-    }
-];
-const jobArray = ["Merchant"];
 function Generator() {
     const [age, setAge] = useState(ageArray[Math.floor((Math.random() * ageArray.length))]);
     const [gender, setGender] = useState(genderArray[Math.floor((Math.random() * genderArray.length))]);
